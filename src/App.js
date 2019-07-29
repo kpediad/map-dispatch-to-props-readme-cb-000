@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { addItem } from  './actions/items';
- 
+
 class App extends Component {
- 
+
   handleOnClick = event => {
     this.props.addItem()
   }
- 
+
   render() {
     return (
       <div className="App">
@@ -20,13 +20,13 @@ class App extends Component {
     );
   }
 };
- 
+
 const mapStateToProps = (state) => {
   return {
     items: state.items
   };
 };
- 
+
 const mapDispatchToProps = dispatch => {
   return {
     addItem: () => {
@@ -34,5 +34,5 @@ const mapDispatchToProps = dispatch => {
     }
   };
 };
- 
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);
